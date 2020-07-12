@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Membership</title>
+<h2>Register if you want to subscribe to our monthly Dessert World Newsletter!</h1>
+
+</head>
+<style>
+.h2
+{
+color:black;
+align:center;
+}
+  .div{
+   text-align:left;
+  flex:1;
+    font-size: 23px;
+    font-color:be8abf;
+  background-color:LavenderBlush;
+  text-color:be8abf;
+     font:Verdana;
+    font-size: 23px;}
+    .button
+{
+background-color:White
+    cursor:pointer;
+    border:2px solid be8abf;
+    width:32%;
+   text-color:be8abf;
+   font-color:be8abf;
+     color:be8abf;
+     font:Verdana;
+    font-size: 20px;
+  text-decoration:none;
+   display: inline-flex; /* keep the inline nature of buttons */
+    align-items: flex-start; /* this is default */
+   text-align: center;
+  display: inline-block;
+  margin: 4px 2px;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+ 
+}
+</style>
+
+<script>
+	
+		function checkfname()
+         {
+	    var fname=document.myform.firstname.value;
+		 var letters = /^[A-Za-z]+$/;
+	    if (fname==null || fname=="" || !fname.match(letters) ){  
+	    	  alert("Invalid First Name");  
+	    	  return false;  
+	    	}
+          }
+		function checklname()
+         {
+	   
+	    var lname=document.myform.lastname.value;
+		 var letters = /^[A-Za-z]+$/;
+	    if (lname==null || lname=="" || !lname.match(letters)){  
+	    	  alert("Invalid Last Name");  
+	    	  return false;  
+	    	}
+          }
+
+     function checknum()
+	{
+	 var number=document.myform.number.value;
+	      var phoneno = /^\d{10}$/;
+        if(!number.match(phoneno)|| number.length!=10)
+              {
+		 alert("Invalid Phone Number!");
+              return false;
+              }
+            else
+              {
+              return true;
+              }
+	}
+
+    function checkemail()
+   {
+	var inputemail=document.myform.email;
+    var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+		if(!inputemail.value.match(mailformat))
+		{   
+    
+   		 alert("Invalid Email");
+   		return false;
+
+		}
+		else
+		{
+		return true;    
+		}
+  }
+    function checkall()
+    {
+    	checkfname();
+    	checklname();
+    	checknum();
+    	checkemail();
+    }
+	
+</script>
+
+
+
+
+<body background="./Images/P2 .png">
+
+<form name="myform" method="POST" class="div">  
+<p><b><font color="be8abf">First Name</font></p> 
+<input class="design" onchange="checkfname()" type="text" name="firstname"> <br>
+<p><font color="be8abf">Last Name</font></p>
+<input class="design" onchange="checklname()" type="text" name="lastname"> <br>
+<p><font color="be8abf">Phone Number </font></p>
+<input class="design" onchange="checknum()" type="text" name="number"><span id="numloc"></span><br>
+<p><font color="be8abf">Email Address</font></p>
+<input class="design" onchange="checkemail()" type="text" name="email"><br>
+<br>
+<input type="button"  class="button" name="submit" onclick=" checkout.jsp" value="Submit Details">
+</form>
+</body>
+</html>
